@@ -1,0 +1,83 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables vintage */
+:root {
+  --vintage-bg: #f4ecd8;
+  --vintage-dark: #5a4634;
+  --vintage-accent: #a67c52;
+  --vintage-border: #d6c3a3;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--vintage-bg);
+  border-bottom: 3px solid var(--vintage-border);
+  font-family: "Georgia", serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--vintage-dark);
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--vintage-dark);
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--vintage-accent);
+}
+
+/* Cart */
+.cart {
+  font-size: 1.2rem;
+  color: var(--vintage-dark);
+  background: #fff7e6;
+  padding: 6px 12px;
+  border: 2px solid var(--vintage-border);
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.cart-count {
+  margin-left: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}

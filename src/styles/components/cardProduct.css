@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+.card-product {
+  --vintage-cream: #f5f1e8;
+  --vintage-paper: #faf8f3;
+  --vintage-ink: #2c241b;
+  --vintage-gold: #c9a227;
+  --vintage-brown: #8b7355;
+  --vintage-shadow: rgba(44, 36, 27, 0.08);
+  
+  background: var(--vintage-paper);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 
+    0 1px 3px var(--vintage-shadow),
+    0 4px 12px var(--vintage-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  
+  /* Borde sutil tipo papel antiguo */
+  border: 1px solid #e8e2d5;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-product::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--vintage-gold),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+.card-product:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 25px var(--vintage-shadow),
+    0 12px 40px rgba(44, 36, 27, 0.12);
+}
+
+/* Imagen */
+.card-image-wrapper {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: var(--vintage-cream);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(10%) contrast(1.05);
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.card-product:hover .card-image {
+  transform: scale(1.05);
+  filter: sepia(0%) contrast(1.1);
+}
+
+.card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(44, 36, 27, 0.03)
+  );
+  pointer-events: none;
+}
+
+/* Contenido */
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--vintage-ink);
+  line-height: 1.3;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.card-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--vintage-brown);
+  line-height: 1.6;
+  margin: 0;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e2d5;
+
+}
+
+.card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--vintage-ink);
+  letter-spacing: -0.02em;
+}
+
+.card-price::before {
+  content: '$';
+  font-size: 0.875rem;
+  vertical-align: super;
+  margin-right: 0.125rem;
+  color: var(--vintage-brown);
+}
+
+.card-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.625rem 1.25rem;
+  background: var(--vintage-ink);
+  color: var(--vintage-paper);
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
+.card-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card-content {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+  
+  .card-price {
+    font-size: 1.25rem;
+  }
+}
